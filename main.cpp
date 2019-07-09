@@ -6,8 +6,8 @@
 #include <unistd.h>
 #endif
 
-#include "get/src/Get.hpp"
-#include "get/src/Utils.hpp"
+#include "libs/get/src/Get.hpp"
+#include "libs/get/src/Utils.hpp"
 
 #if defined(NOGUI)
 #include "console/Input.hpp"
