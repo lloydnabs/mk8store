@@ -1,0 +1,32 @@
+language: cpp
+sudo: required
+
+os: linux
+dist: xenial
+
+env:
+  global:
+    - DEVKITPRO=/opt/devkitpro
+    - DEVKITPPC=/opt/devkitpro/devkitPPC
+    - WUT_ROOT=/opt/devkitpro/wut
+
+matrix:
+  include:
+    - env: PLATFORM=wiiu
+  allow_failures:
+    - env: PLATFORM=wiiu
+
+addons:
+  apt:
+    packages:
+      - git
+      - wget
+
+install:
+  - ./dependency_helper.sh
+
+script:
+  - make -f Makefile.${PLATFORM}
+
+file:
+  - mk8appstore.rpx
