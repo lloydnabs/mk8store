@@ -1,7 +1,7 @@
-GET		:= ./libs/get/src
-RAPIDJSON	:= ./libs/get/src/libs/rapidjson/include
-MINIZIP         := ./libs/get/src/libs/minizip
-TINYXML 	:= ./libs/get/src/libs/tinyxml
+GET		:= libget/src
+RAPIDJSON	:= rapidjson/include
+MINIZIP         := minizip
+TINYXML 	:= tinyxml
 
 #-------------------------------------------------------------------------------
 .SUFFIXES:
