@@ -36,6 +36,6 @@ deploy:
 
   api_key: $KEY
 
-  file: appstore.rpx
+  file: mk8store.rpx
 
   draft: true
