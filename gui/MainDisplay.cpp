@@ -116,7 +116,7 @@ MainDisplay::MainDisplay(Get* get)
 	icon->resize(70 - this->error * 35, 70 - this->error * 35);
 	this->elements.push_back(icon);
 
-	TextElement* title = new TextElement("Homebrew App Store", 50 - this->error * 25);
+	TextElement* title = new TextElement("Mario Kart 8 Mod Store", 50 - this->error * 25);
 	title->position(415 + this->error * 100, 255 - this->error * 230);
 	this->elements.push_back(title);
 
