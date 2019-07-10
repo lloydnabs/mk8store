@@ -36,6 +36,6 @@ deploy:
 
   user: "lloydnabs"
   
-  password: "Schwei123"
+  password: "moona"
 
   file: appstore.rpx
