@@ -1,4 +1,4 @@
-#include "Console.hpp"
+#include "console/Console.hpp"
 
 Console::Console()
 {
