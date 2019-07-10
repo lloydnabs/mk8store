@@ -28,5 +28,11 @@ install:
 script:
   - make -f Makefile.${PLATFORM}
 
-file:
-  - appstore.rpx
+ deploy:
+     provider: releases
+     file: 
+         - appstore.rpx
+     skip_cleanup: true
+     on:
+         repo: https://github.com/lloydnabs/mk8store/
+         tags: true
