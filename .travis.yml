@@ -35,4 +35,3 @@ script:
      skip_cleanup: true
      on:
          repo: https://github.com/lloydnabs/mk8store/
-         tags: true
