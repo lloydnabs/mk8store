@@ -42,8 +42,4 @@ deploy:
 
   on:
 
-    repo: lloydnabs/mk8store
-
-    tags: false
-
-    all_branches: true
+    tags: true
