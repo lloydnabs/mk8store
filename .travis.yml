@@ -28,15 +28,6 @@ install:
 script:
   - make -f Makefile.${PLATFORM}
 
-before_deploy:
-
-- mkdir -p "wiiu/apps/mk8store"
-
-- versiontag="0.1"
-
-- cp appstore.rpx wiiu/apps/sdcafiine
-
-- zip -r mk8store.zip wiiu
 deploy:
 
   provider: releases
@@ -47,7 +38,7 @@ deploy:
 
     secure: "d4023e375a028a7c96907ab0847607f3377e1153"
 
-  file: mk8store.zip
+  file: appstore.rpx
 
   on:
 
