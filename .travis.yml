@@ -34,9 +34,7 @@ deploy:
 
   skip_cleanup: true
 
-  user: "lloydnabs"
-  
-  password: "Schwei123"
+  api_key: adf52b145ece2e3d2d0038ddacc9301e29cd4697
 
   file: appstore.rpx
 
