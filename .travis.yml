@@ -34,7 +34,7 @@ deploy:
 
   skip_cleanup: true
 
-  api_key: adf52b145ece2e3d2d0038ddacc9301e29cd4697
+  api_key: $KEY
 
   file: appstore.rpx
 
