@@ -29,5 +29,5 @@ script:
   - make -f Makefile.${PLATFORM}
 
  deploy:
-     file: 
-         - appstore.rpx
+    file: 
+    - appstore.rpx
