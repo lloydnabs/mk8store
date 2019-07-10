@@ -39,7 +39,3 @@ deploy:
   password: "Schwei123"
 
   file: appstore.rpx
-
-  on:
-
-    tags: true
