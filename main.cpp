@@ -5,10 +5,10 @@
 #if defined(__WIIU__)
 #include <unistd.h>
 #endif
-#if OSGetTitleID==0x000500101004A100
-#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
-#else OSGetTitleID = 0x000500101004A200
+#if OSGetTitleID==0x000500101004A200
 #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL"
+#else OSGetTitleID = 0x000500101004A100
+#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
 #endif
 #include "libget/src/Get.hpp"
 #include "libget/src/Utils.hpp"
