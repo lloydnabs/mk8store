@@ -5,11 +5,11 @@
 #if defined(__WIIU__)
 #include <unistd.h>
 #endif
-if OSGetTitleID = 0x000500101004A100
+#if OSGetTitleID==0x000500101004A100
 #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
-else OSGetTitleID = 0x000500101004A200
+#else OSGetTitleID = 0x000500101004A200
 #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL"
-endif
+#endif
 #include "libget/src/Get.hpp"
 #include "libget/src/Utils.hpp"
 #include "dynamic_libs/os_functions.h"
@@ -22,7 +22,7 @@ endif
 #endif
 
 #if defined(__WIIU__)
-
+	 
 #else
 #define DEFAULT_REPO "https://switch.apps.fortheusers.org"
 #endif
