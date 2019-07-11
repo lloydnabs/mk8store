@@ -28,9 +28,9 @@ int main(int argc, char* argv[])
 //	stdout = stderr; // for yuzu
 
 #if defined(__WIIU__)
-#define HBAS_PATH ROOT_PATH "wiiu/apps/mk8appstore"
+#define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
-#define RPX_PATH HBAS_PATH "/mk8appstore.rpx"
+#define RPX_PATH HBAS_PATH "/mk8store.rpx"
     mkdir(HBAS_PATH, 0700);
 	chdir(HBAS_PATH);
 
