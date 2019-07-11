@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 	struct stat sbuff;
 	if (stat(ELF_PATH, &sbuff) == 0)
 		std::rename(ELF_PATH, RPX_PATH);
-    if OSGetTitleID==0x000500101004A100
+    if (OSGetTitleID==0x000500101004A100)
         #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
     else OSGetTitleID = 0x000500101004A200
         #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL"
