@@ -18,9 +18,9 @@
 #endif
 
 #if defined(__WIIU__)
-	if OSGetTitleID = 0x000500101004A100
+	#if OSGetTitleID = 0x000500101004A100
         #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
-	else OSGetTitleID = 0x000500101004A200
+	#else OSGetTitleID = 0x000500101004A200
         #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL"
     endif
 #else
