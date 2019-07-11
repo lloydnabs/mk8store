@@ -39,7 +39,7 @@ case "${PLATFORM}" in
       wget https://gitlab.com/QuarkTheAwesome/wiiu-fling/-/jobs/180065467/artifacts/raw/packages/sdl2_ttf/wiiu-sdl2_ttf-2.0.14-4-any.pkg.tar.xz
       sudo dkp-pacman -U wiiu-sdl2_ttf-2.0.14-4-any.pkg.tar.xz
 
-      sudo dkp-pacman --noconfirm -S wut-linux wiiu-sdl2 devkitPPC wiiu-libromfs wiiu-sdl2_gfx wiiu-sdl2_image wiiu-sdl2_mixer ppc-zlib ppc-bzip2 ppc-freetype ppc-mpg123 ppc-libpng wiiu-curl-headers ppc-pkg-config wiiu-pkg-config
+      sudo dkp-pacman -y --noconfirm -S wut-linux wiiu-sdl2 devkitPPC wiiu-libromfs wiiu-sdl2_gfx wiiu-sdl2_image wiiu-sdl2_mixer ppc-zlib ppc-bzip2 ppc-freetype ppc-mpg123 ppc-libpng wiiu-curl-headers ppc-pkg-config wiiu-pkg-config
        
     ;;
 esac
