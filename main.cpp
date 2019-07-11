@@ -8,7 +8,8 @@
 
 #include "libget/src/Get.hpp"
 #include "libget/src/Utils.hpp"
-
+#include "dynamic_libs/os_functions.h"
+#include "dynamic_libs/sys_functions.h"
 #if defined(NOGUI)
 #include "console/Input.hpp"
 #include "console/Menu.hpp"
@@ -17,7 +18,11 @@
 #endif
 
 #if defined(__WIIU__)
-#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU"
+#if OSGetTitleID() = 0x000500101004A100
+#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
+#endif
+#if OSGetTitleID() = 0x000500101004A200
+#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 #else
 #define DEFAULT_REPO "https://switch.apps.fortheusers.org"
 #endif
