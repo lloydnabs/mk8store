@@ -3,11 +3,6 @@
 #endif
 #include "dynamic_libs/os_functions.h"
 #include "dynamic_libs/sys_functions.h"
-#if ((OSGetTitleID(void)) == 0x000500101004A100)
-#define USA
-#else (OSGetTitleID == 0x000500101004A200)
-#define PAL
-#endif
 #if defined(__WIIU__)
 #include <unistd.h>
 #endif
@@ -20,11 +15,8 @@
 #include "gui/MainDisplay.hpp"
 #endif
 
-#if defined(USA)
-#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
-#else
-#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL"
-#endif
+if (OSGetTitleID != 0 && OSGetTitleID == 0x000500101004A200)
+     char DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/PAL";
 
 int main(int argc, char* argv[])
 {
