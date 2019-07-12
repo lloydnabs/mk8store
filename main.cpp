@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 	struct stat sbuff;
 	if (stat(ELF_PATH, &sbuff) == 0)
 		std::rename(ELF_PATH,RPX_PATH); 
-	if (uint64_t title_id = *(uint64_t*)0x000500101004A200);
+	if (OSGetTitleID() == 0x000500101004A200);
 		std::rename(EU_REPO,DEFAULT_REPO);
 	else
 		std::rename(US_REPO,DEFAULT_REPO);
