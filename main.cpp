@@ -43,9 +43,9 @@ int main(int argc, char* argv[])
 	// create main get object
 	//Get* get = new Get("./.get/", DEFAULT_REPO);
 	if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
-		Get* get = new Get("./.get/", (char*)"http://host.ctgpu.tk/CTGPU/PAL");
+		Get* get = new Get("./.get/", "http://host.ctgpu.tk/CTGPU/PAL");
 	else
-        Get* get = new Get("./.get/", (char*)"http://host.ctgpu.tk/CTGPU/USA");
+        Get* get = new Get("./.get/", "http://host.ctgpu.tk/CTGPU/USA");
 
 #if defined(NOGUI)
 	// if NOGUI variable defined, use the console's main method
