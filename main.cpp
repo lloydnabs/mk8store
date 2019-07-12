@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
     else
         char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/USA";
 	// create main get object
-	Get* get = new Get("./.get/", DEFAULT_REPO);
+	Get* get = new Get("./.get/", char* DEFAULT_REPO);
 
 #if defined(NOGUI)
 	// if NOGUI variable defined, use the console's main method
