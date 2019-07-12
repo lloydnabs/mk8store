@@ -5,6 +5,7 @@
 #include "dynamic_libs/sys_functions.h"
 #if defined(__WIIU__)
 #include <unistd.h>
+#define DEFAULT_REPO
 #endif
 #include "libget/src/Get.hpp"
 #include "libget/src/Utils.hpp"
