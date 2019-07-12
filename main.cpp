@@ -17,7 +17,8 @@
 
 if (OSGetTitleID != 0 && OSGetTitleID == 0x000500101004A200)
      char DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/PAL";
-
+else
+     char DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/USA";
 int main(int argc, char* argv[])
 {
 //	consoleDebugInit(debugDevice_SVC);
