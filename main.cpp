@@ -33,9 +33,9 @@ int main(int argc, char* argv[])
 	init_networking();
 	// create main get object
         uint64_t title_id = *(uint64_t*)0x10013C10;
-        if (title_id == 0x000500101004A200)
+        #if (title_id == 0x000500101004A200)
 	        char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/PAL") ;
-        else
+        #else
 	        char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/USA") ;
 	Get* get = new Get("./.get/", DEFAULT_REPO);
  
