@@ -30,9 +30,9 @@ int main(int argc, char* argv[])
 	        std::rename(ELF_PATH,RPX_PATH); 
 uint64_t title_id = *(uint64_t*)0x10013C10;
 if (title_id == 0x000500101004A200)
-	char* DEFAULT_REPO=(char*)(http://host.ctgpu.tk/CTGPU/PAL";
+	char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/PAL") ;
 else
-	char* DEFAULT_REPO=(char*)(http://host.ctgpu.tk/CTGPU/USA";
+	char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/USA") ;
     #endif
 	init_networking();
 	// create main get object
