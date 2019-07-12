@@ -5,6 +5,7 @@
 #include "dynamic_libs/sys_functions.h"
 #if defined(__WIIU__)
 #include <unistd.h>
+#define DEFAULT_REPO
 #endif
 #include "libget/src/Get.hpp"
 #include "libget/src/Utils.hpp"
@@ -32,7 +33,6 @@ int main(int argc, char* argv[])
 #if defined(__WIIU__) 
 	init_networking();
 	// create main get object
-        char* DEFAULT_REPO;
         uint64_t title_id = *(uint64_t*)0x10013C10;
         if (title_id == 0x000500101004A200)
 	        char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/PAL") ;
