@@ -15,10 +15,6 @@
 #include "gui/MainDisplay.hpp"
 #endif
 
-if (OSGetTitleID != 0 && OSGetTitleID == 0x000500101004A200)
-     char DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/PAL";
-else
-     char DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/USA";
 int main(int argc, char* argv[])
 {
 //	consoleDebugInit(debugDevice_SVC);
@@ -35,6 +31,11 @@ int main(int argc, char* argv[])
 	struct stat sbuff;
 	if (stat(ELF_PATH, &sbuff) == 0)
 		std::rename(ELF_PATH, RPX_PATH);
+        if (OSGetTitleID != 0 && OSGetTitleID == 0x000500101004A200)
+                char DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/PAL";
+        else
+                char DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/USA";
+
     #endif
 	init_networking();
 
