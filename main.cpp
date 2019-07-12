@@ -20,10 +20,10 @@ int main(int argc, char* argv[])
 //	consoleDebugInit(debugDevice_SVC);
 //	stdout = stderr; // for yuzu
 if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
-    char* repo=(char*)"http://host.ctgpu.tk/CTGPU/PAL";
+    char* repo=(char)"http://host.ctgpu.tk/CTGPU/PAL";
 	(void)repo;
 else
-    char* repo=(char*)"http://host.ctgpu.tk/CTGPU/USA";
+    char* repo=(char)"http://host.ctgpu.tk/CTGPU/USA";
 	(void)repo;
 #define DEFAULT_REPO repo
 #if defined(__WIIU__)
