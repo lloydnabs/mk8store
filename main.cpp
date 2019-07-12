@@ -32,9 +32,9 @@ int main(int argc, char* argv[])
 	if (stat(ELF_PATH, &sbuff) == 0)
 		std::rename(ELF_PATH, RPX_PATH);
     if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
-        DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/PAL";
+        char* DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/PAL";
     else
-        DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/USA";
+        char* DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/USA";
 
     #endif
 	init_networking();
