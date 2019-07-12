@@ -19,13 +19,13 @@ int main(int argc, char* argv[])
 {
 //	consoleDebugInit(debugDevice_SVC);
 //	stdout = stderr; // for yuzu
-if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
-    char repo=(char)"http://host.ctgpu.tk/CTGPU/PAL";
-	(void)repo;
-else
-    char repo=(char)"http://host.ctgpu.tk/CTGPU/USA";
-	(void)repo;
-#define DEFAULT_REPO repo
+//if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
+ //   char repo=(char)"http://host.ctgpu.tk/CTGPU/PAL";
+//	(void)repo;
+//else
+  //  char repo=(char)"http://host.ctgpu.tk/CTGPU/USA";
+	//(void)repo;
+//#define DEFAULT_REPO repo
 #if defined(__WIIU__)
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
@@ -41,7 +41,11 @@ else
     #endif
 	init_networking();
 	// create main get object
-	Get* get = new Get("./.get/", DEFAULT_REPO);
+	//Get* get = new Get("./.get/", DEFAULT_REPO);
+	if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
+		Get* get = new Get("./.get/", (char*)"http://host.ctgpu.tk/CTGPU/PAL);
+	else
+        Get* get = new Get("./.get/", (char*)"http://host.ctgpu.tk/CTGPU/USA);
 
 #if defined(NOGUI)
 	// if NOGUI variable defined, use the console's main method
