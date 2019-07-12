@@ -19,7 +19,10 @@ int main(int argc, char* argv[])
 {
 //	consoleDebugInit(debugDevice_SVC);
 //	stdout = stderr; // for yuzu
-
+if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
+    char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/PAL";
+else
+    char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/USA";
 #if defined(__WIIU__)
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
@@ -34,10 +37,6 @@ int main(int argc, char* argv[])
 
     #endif
 	init_networking();
-    if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
-        char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/PAL";
-    else
-        char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/USA";
 	// create main get object
 	Get* get = new Get("./.get/", DEFAULT_REPO);
 
