@@ -21,6 +21,7 @@ int main(int argc, char* argv[])
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
 #define RPX_PATH HBAS_PATH "/mk8store.rpx"
+#define DEFAULT_REPO
 #define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
 #define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 	mkdir(HBAS_PATH, 0700);
