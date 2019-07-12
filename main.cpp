@@ -5,7 +5,6 @@
 #include "dynamic_libs/sys_functions.h"
 #if defined(__WIIU__)
 #include <unistd.h>
-#define DEFAULT_REPO
 #endif
 #include "libget/src/Get.hpp"
 #include "libget/src/Utils.hpp"
@@ -15,7 +14,7 @@
 #else
 #include "gui/MainDisplay.hpp"
 #endif
-
+char* DEFAULT_REPO;
 int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
