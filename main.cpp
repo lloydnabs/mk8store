@@ -1,7 +1,11 @@
 #if defined(SWITCH)
 #include <switch.h>
 #endif
-
+#if (OSGetTitleID == 0x000500101004A200)
+#define USA
+#else (OSGetTitleID == 0x000500101004A200)
+#define PAL
+#endif
 #if defined(__WIIU__)
 #include <unistd.h>
 #endif
@@ -38,11 +42,7 @@ int main(int argc, char* argv[])
 	struct stat sbuff;
 	if (stat(ELF_PATH, &sbuff) == 0)
 		std::rename(ELF_PATH, RPX_PATH);
-    if (OSGetTitleID() == 0x000500101004A100)
-        #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA";
-    if (OSGetTitleID() == 0x000500101004A200)
-        #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL";
-#endif
+    #endif
 	init_networking();
 
 	// create main get object
