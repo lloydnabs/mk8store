@@ -32,13 +32,13 @@ int main(int argc, char* argv[])
 #if defined(__WIIU__) 
 	init_networking();
 	// create main get object
-        uint64_t title_id = *(uint64_t*)0x10013C10;
+{        uint64_t title_id = *(uint64_t*)0x10013C10;
         if (title_id == 0x000500101004A200)
 	        char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/PAL") ;
         else
 	        char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/USA") ;
 	Get* get = new Get("./.get/", DEFAULT_REPO);
-
+} 
 #endif
 #if defined(NOGUI)
 	// if NOGUI variable defined, use the console's main method
