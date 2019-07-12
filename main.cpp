@@ -5,7 +5,6 @@
 #include "dynamic_libs/sys_functions.h"
 #if defined(__WIIU__)
 #include <unistd.h>
-#define DEFAULT_REPO
 #endif
 #include "libget/src/Get.hpp"
 #include "libget/src/Utils.hpp"
@@ -21,11 +20,12 @@ int main(int argc, char* argv[])
 //	consoleDebugInit(debugDevice_SVC);
 //	stdout = stderr; // for yuzu
 if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
-    char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/PAL";
-	(void)DEFAULT_REPO;
+    char* repo=(char*)"http://host.ctgpu.tk/CTGPU/PAL";
+	(void)repo;
 else
-    char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/USA";
-	(void)DEFAULT_REPO;
+    char* repo=(char*)"http://host.ctgpu.tk/CTGPU/USA";
+	(void)repo;
+#define DEFAULT_REPO repo
 #if defined(__WIIU__)
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
