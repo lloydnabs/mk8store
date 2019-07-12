@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 if (OSGetTitleID() == 0x000500101004A200)
 	std::rename(EU_REPO,DEFAULT_REPO);
 else
-	std::rename(US_REPO,DEFAULT_REPO)
+	std::rename(US_REPO,DEFAULT_REPO);
     #endif
 	init_networking();
 	// create main get object
