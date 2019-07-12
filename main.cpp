@@ -35,9 +35,9 @@ int main(int argc, char* argv[])
     #endif
 	init_networking();
     if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
-        char* DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/PAL";
+        char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/PAL";
     else
-        char* DEFAULT_REPO="http://host.ctgpu.tk/CTGPU/USA";
+        char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/USA";
 	// create main get object
 	Get* get = new Get("./.get/", DEFAULT_REPO);
 
