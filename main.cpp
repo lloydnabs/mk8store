@@ -20,10 +20,10 @@
 #include "gui/MainDisplay.hpp"
 #endif
 
-#if defined(__WIIU__)
-	 
+#if defined(USA)
+#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
 #else
-#define DEFAULT_REPO "https://switch.apps.fortheusers.org"
+#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 #endif
 
 int main(int argc, char* argv[])
