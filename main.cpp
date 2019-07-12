@@ -29,12 +29,12 @@ int main(int argc, char* argv[])
 
 	// "migrate" old elf users over to rpx (should've been done last version)
 	struct stat sbuff;
-	if (stat(ELF_PATH, &sbuff) == 0)
-		std::rename(ELF_PATH,RPX_PATH); 
-	if (OSGetTitleID() == 0x000500101004A200);
-		std::rename(EU_REPO,DEFAULT_REPO);
-	else
-		std::rename(US_REPO,DEFAULT_REPO);
+        if (stat(ELF_PATH, &sbuff) == 0)
+	        std::rename(ELF_PATH,RPX_PATH); 
+if (OSGetTitleID() == 0x000500101004A200);
+	std::rename(EU_REPO,DEFAULT_REPO);
+else
+	std::rename(US_REPO,DEFAULT_REPO);
     #endif
 	init_networking();
 	// create main get object
