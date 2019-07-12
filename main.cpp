@@ -21,9 +21,6 @@ int main(int argc, char* argv[])
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
 #define RPX_PATH HBAS_PATH "/mk8store.rpx"
-#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU"
-#define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
-#define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 	mkdir(HBAS_PATH, 0700);
 	chdir(HBAS_PATH);
 
@@ -33,9 +30,9 @@ int main(int argc, char* argv[])
 	        std::rename(ELF_PATH,RPX_PATH); 
 uint64_t title_id = *(uint64_t*)0x10013C10;
 if (title_id == 0x000500101004A200)
-	std::rename(EU_REPO,DEFAULT_REPO);
+	char* DEFAULT_REPO=(char*)(http://host.ctgpu.tk/CTGPU/PAL";
 else
-	std::rename(US_REPO,DEFAULT_REPO);
+	char* DEFAULT_REPO=(char*)(http://host.ctgpu.tk/CTGPU/USA";
     #endif
 	init_networking();
 	// create main get object
