@@ -3,7 +3,7 @@
 #endif
 #include "dynamic_libs/os_functions.h"
 #include "dynamic_libs/sys_functions.h"
-#if ((OSGetTitleID[K(void)]) == 0x000500101004A100)
+#if ((OSGetTitleID(void)) == 0x000500101004A100)
 #define USA
 #else (OSGetTitleID == 0x000500101004A200)
 #define PAL
