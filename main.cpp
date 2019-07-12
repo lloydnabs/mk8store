@@ -17,35 +17,31 @@
 
 int main(int argc, char* argv[])
 {
-//	consoleDebugInit(debugDevice_SVC);
-//	stdout = stderr; // for yuzu
-//if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
- //   char repo=(char)"http://host.ctgpu.tk/CTGPU/PAL";
-//	(void)repo;
-//else
-  //  char repo=(char)"http://host.ctgpu.tk/CTGPU/USA";
-	//(void)repo;
-//#define DEFAULT_REPO repo
 #if defined(__WIIU__)
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
 #define RPX_PATH HBAS_PATH "/mk8store.rpx"
-    mkdir(HBAS_PATH, 0700);
+#define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
+#define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
+	mkdir(HBAS_PATH, 0700);
 	chdir(HBAS_PATH);
 
 	// "migrate" old elf users over to rpx (should've been done last version)
 	struct stat sbuff;
 	if (stat(ELF_PATH, &sbuff) == 0)
-		std::rename(ELF_PATH, RPX_PATH);
-
+		std::rename(ELF_PATH,RPX_PATH); 
+	if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
+		std::rename(EU_REPO,DEFAULT_REPO);
+	else
+		std::rename(US_REPO,DEFAULT_REPO);
     #endif
 	init_networking();
 	// create main get object
-	//Get* get = new Get("./.get/", DEFAULT_REPO);
+	Get* get = new Get("./.get/", DEFAULT_REPO);
 	if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
 		Get* get = new Get("./.get/", http://host.ctgpu.tk/CTGPU/PAL);
 	else
-        Get* get = new Get("./.get/", http://host.ctgpu.tk/CTGPU/USA);
+        Get* get = new Get("./.get/", );
 
 #if defined(NOGUI)
 	// if NOGUI variable defined, use the console's main method
