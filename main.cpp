@@ -32,9 +32,9 @@ int main(int argc, char* argv[])
         if (title_id == 0x000500101004A200)
                 #define PAL ;
 #if defined (PAL)
-#define DEFAULT_REPO " http://host.ctgpu.tk/CTGPU/PAL"
+#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 #else
-#define DEFAULT_REPO " http://host.ctgpu.tk/CTGPU /USA"
+#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA"
 #endif
 #if defined(__WIIU__) 
 	init_networking();
