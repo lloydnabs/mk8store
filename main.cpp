@@ -23,6 +23,7 @@ if (OSGetTitleID != 0 && OSGetTitleID() == 0x000500101004A200)
     char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/PAL";
 else
     char* DEFAULT_REPO=(char*)"http://host.ctgpu.tk/CTGPU/USA";
+(void)DEFAULT_REPO;
 #if defined(__WIIU__)
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
