@@ -14,7 +14,6 @@
 #else
 #include "gui/MainDisplay.hpp"
 #endif
-char* DEFAULT_REPO;
 int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
@@ -29,14 +28,18 @@ int main(int argc, char* argv[])
         if (stat(ELF_PATH, &sbuff) == 0)
 	        std::rename(ELF_PATH,RPX_PATH); 
     #endif
+        uint64_t title_id = *(uint64_t*)0x10013C10;
+        if (title_id == 0x000500101004A200)
+                #define PAL ;
+#if defined (PAL)
+#define DEFAULT_REPO " http://host.ctgpu.tk/CTGPU/PAL"
+#else
+#define DEFAULT_REPO " http://host.ctgpu.tk/CTGPU /USA"
+#endif
 #if defined(__WIIU__) 
 	init_networking();
 	// create main get object
-        uint64_t title_id = *(uint64_t*)0x10013C10;
-        if (title_id == 0x000500101004A200)
-	        #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/PAL";//char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/PAL") ;
-        else
-	        #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU/USA";//char* DEFAULT_REPO=(char*)("http://host.ctgpu.tk/CTGPU/USA") ;
+        
 	Get* get = new Get("./.get/", DEFAULT_REPO);
  
 #endif
