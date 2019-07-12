@@ -1,7 +1,9 @@
 #if defined(SWITCH)
 #include <switch.h>
 #endif
-#if (OSGetTitleID == 0x000500101004A200)
+#include "dynamic_libs/os_functions.h"
+#include "dynamic_libs/sys_functions.h"
+#if ((OSGetTitleID()) == 0x000500101004A100)
 #define USA
 #else (OSGetTitleID == 0x000500101004A200)
 #define PAL
@@ -9,8 +11,6 @@
 #if defined(__WIIU__)
 #include <unistd.h>
 #endif
-#include "dynamic_libs/os_functions.h"
-#include "dynamic_libs/sys_functions.h"
 #include "libget/src/Get.hpp"
 #include "libget/src/Utils.hpp"
 #if defined(NOGUI)
