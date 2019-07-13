@@ -3,6 +3,7 @@
 #include "constants.h"
 #include "rapidjson/document.h"
 #include "rapidjson/rapidjson.h"
+#include <coreinit/title.h>
 #include <regex>
 #include <sstream>
 #include <stdarg.h> /* va_list, va_start, va_arg, va_end */
@@ -16,9 +17,17 @@ Repo::Repo()
 Repo::Repo(const char* name, const char* url)
 {
 	// create a repo from the passed parameters
-	this->name = name;
-	this->url = url;
-	this->enabled = true;
+	uint64_t title_id = OSGetTitleID();
+	if (title_id == 0x000500101004A200){
+		this->name = name;
+		this->url = (const char*) "http://host.ctgpu.tk/CTGPU/PAL";
+		this->enabled = true;
+	}
+	else{
+		this->name = name;
+		this->url = (const char*) "http://host.ctgpu.tk/CTGPU/USA";
+		this->enabled = true;
+	}
 }
 
 std::string Repo::toJson()
