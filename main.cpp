@@ -15,6 +15,15 @@
 #include "gui/MainDisplay.hpp"
 #endif
 char *DEFAULT_REPO;
+void check_title_id() {
+    uint64_t title_id = *(uint64_t*)0x10013C10;
+    if (title_id == 0x000500101004A200){
+        DEFAULT_REPO = "http://host.ctgpu.tk/CTGPU/PAL";
+    }
+    else{
+        DEFAULT_REPO = "http://host.ctgpu.tk/CTGPU/USA";
+    }
+}
 int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
@@ -30,15 +39,7 @@ int main(int argc, char* argv[])
 	        std::rename(ELF_PATH,RPX_PATH); 
     #endif
 		
-		void check_title_id() {
-    uint64_t title_id = *(uint64_t*)0x10013C10;
-    		if (title_id == 0x000500101004A200){
-        		DEFAULT_REPO = "http://host.ctgpu.tk/CTGPU/PAL";
-    }
-    		else{
-        		DEFAULT_REPO = "http://host.ctgpu.tk/CTGPU/USA";
-    }
-}
+
 #if defined(__WIIU__) 
 	init_networking();
 	// create main get object
