@@ -18,10 +18,10 @@ char *DEFAULT_REPO;
 void check_title_id() {
     uint64_t title_id = *(uint64_t*)0x10013C10;
     if (title_id == 0x000500101004A200){
-        DEFAULT_REPO = "http://host.ctgpu.tk/CTGPU/PAL";
+        DEFAULT_REPO = (char*))"http://host.ctgpu.tk/CTGPU/PAL";
     }
     else{
-        DEFAULT_REPO = "http://host.ctgpu.tk/CTGPU/USA";
+        DEFAULT_REPO = (char*))"http://host.ctgpu.tk/CTGPU/USA";
     }
 }
 int main(int argc, char* argv[])
