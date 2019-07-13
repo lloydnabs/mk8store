@@ -24,7 +24,7 @@ void check_title_id() {
         DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/USA";
     }
 }
-check_title_id();
+int check_title_id();
 int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
