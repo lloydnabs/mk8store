@@ -14,7 +14,7 @@
 #else
 #include "gui/MainDisplay.hpp"
 #endif
-char *DEFAULT_REPO
+char *DEFAULT_REPO;
 int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
