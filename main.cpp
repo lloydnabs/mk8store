@@ -15,26 +15,15 @@
 #define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
 #define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 #endif
-bool eu = False
 void title_check(){
-Get* get = new Get("./.get/", US_REPO);
 uint64_t title_id = OSGetTitleID();
 if (title_id == 0x000500101004A200){
-    bool eu = True
+    std::rename(EU_REPO,DEFAULT_REPO);
 }
-return;
+else {
+	std::rename(US_REPO,DEFAULT_REPO);
 }
-#if defined(__WIIU__) 
-	init_networking();
-	// create main get object
-	void regionrepo()
-	{
-	if (eu == True)
-	{
-		Get* get = new Get("./.get/", EU_REPO);
-	}
-	}
-#endif
+}
 int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
@@ -50,7 +39,11 @@ int main(int argc, char* argv[])
 	        std::rename(ELF_PATH,RPX_PATH); 
     #endif
 		
-
+#if defined(__WIIU__) 
+	init_networking();
+	// create main get object
+	Get* get = new Get("./.get/", DEFAULT_REPO);
+#endif
 
 #if defined(NOGUI)
 	// if NOGUI variable defined, use the console's main method
