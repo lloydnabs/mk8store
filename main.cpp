@@ -29,10 +29,9 @@ int main(int argc, char* argv[])
         if (stat(ELF_PATH, &sbuff) == 0)
 	        std::rename(ELF_PATH,RPX_PATH); 
     #endif
-        uint64_t title_id = *(uint64_t*)0x10013C10;
-		void title_id()
+		void check_title_id()
 {
-    /* ... */
+            uint64_t title_id = *(uint64_t*)0x10013C10;
     		if (title_id == 0x000500101004A200)
     {
         		DEFAULT_REPO = "http://host.ctgpu.tk/CTGPU/PAL";
