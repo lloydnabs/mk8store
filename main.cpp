@@ -15,15 +15,30 @@
 #define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
 #define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 #endif
-eu = False
+bool eu = False
 void title_check(){
 uint64_t title_id = OSGetTitleID();
 if (title_id == 0x000500101004A200){
-    eu = True
+    bool eu = True
 }
 return;
 }
-	int main(int argc, char* argv[])
+#if defined(__WIIU__) 
+	init_networking();
+	// create main get object
+	void regionrepo()
+	{
+	if eu == True
+	{
+		Get* get = new Get("./.get/", EU_REPO);
+	}
+	else
+	{
+		Get* get = new Get("./.get/", US_REPO);
+	}
+	}
+#endif
+int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
@@ -39,22 +54,7 @@ return;
     #endif
 		
 
-#if defined(__WIIU__) 
-	init_networking();
-	// create main get object
-	Get* get = new Get("./.get/", US_REPO);
-	void regionrepo()
-	{
-	if eu == True
-	{
-		Get* get = new Get("./.get/", EU_REPO);
-	}
-	else
-	{
-		Get* get = new Get("./.get/", US_REPO);
-	}
-	}
-#endif
+
 #if defined(NOGUI)
 	// if NOGUI variable defined, use the console's main method
 	int console_main(Get*);
