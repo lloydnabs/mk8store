@@ -18,13 +18,13 @@ void title_check(){
 uint64_t title_id = OSGetTitleID();
 if (title_id == 0x000500101004A200){
     DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/PAL";
-	return DEFAULT_REPO;
+	return;
 }
 else{
     DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/USA";
-	return DEFAULT_REPO;
+	return;
 }
-return DEFAULT_REPO
+return;
 }
 	int main(int argc, char* argv[])
 {
