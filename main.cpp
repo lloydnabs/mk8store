@@ -15,8 +15,9 @@
 #endif
 const char *DEFAULT_REPO;
 void check_title_id() {
+    /*...*/
     uint64_t title_id = OSGetTitleID();
-    if (title_id == 000500101004A200){
+    if (title_id == 0x000500101004A200){
         DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/PAL";
     }
     else{
