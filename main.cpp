@@ -14,7 +14,7 @@
 #include "gui/MainDisplay.hpp"
 #endif
 const char *DEFAULT_REPO;
-check_title_id() {
+int check_title_id() {
     /*...*/
     uint64_t title_id = OSGetTitleID();
     if (title_id == 0x000500101004A200){
