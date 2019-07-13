@@ -12,17 +12,14 @@
 #include "console/Menu.hpp"
 #else
 #include "gui/MainDisplay.hpp"
+#define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
+#define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 #endif
-const char *DEFAULT_REPO;
+eu= False
 void title_check(){
 uint64_t title_id = OSGetTitleID();
 if (title_id == 0x000500101004A200){
-    DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/PAL";
-	return;
-}
-else{
-    DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/USA";
-	return;
+    eu = True
 }
 return;
 }
@@ -45,9 +42,14 @@ return;
 #if defined(__WIIU__) 
 	init_networking();
 	// create main get object
-        
-	Get* get = new Get("./.get/", DEFAULT_REPO);
- 
+    if eu == True
+	{
+		Get* get = new Get("./.get/", EU_REPO);
+	}
+	else
+	{
+		Get* get = new Get("./.get/", US_REPO);
+	}
 #endif
 #if defined(NOGUI)
 	// if NOGUI variable defined, use the console's main method
