@@ -14,14 +14,19 @@
 #include "gui/MainDisplay.hpp"
 #endif
 const char *DEFAULT_REPO;
+void title_check(){
 uint64_t title_id = OSGetTitleID();
 if (title_id == 0x000500101004A200){
     DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/PAL";
+	return DEFAULT_REPO;
 }
 else{
     DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/USA";
+	return DEFAULT_REPO;
 }
-int main(int argc, char* argv[])
+return DEFAULT_REPO
+}
+	int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
