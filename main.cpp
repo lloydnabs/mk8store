@@ -17,6 +17,7 @@
 #endif
 bool eu = False
 void title_check(){
+Get* get = new Get("./.get/", US_REPO);
 uint64_t title_id = OSGetTitleID();
 if (title_id == 0x000500101004A200){
     bool eu = True
@@ -28,13 +29,9 @@ return;
 	// create main get object
 	void regionrepo()
 	{
-	if eu == True
+	if (eu == True)
 	{
 		Get* get = new Get("./.get/", EU_REPO);
-	}
-	else
-	{
-		Get* get = new Get("./.get/", US_REPO);
 	}
 	}
 #endif
