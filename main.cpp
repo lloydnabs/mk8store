@@ -14,7 +14,7 @@
 #include "gui/MainDisplay.hpp"
 #endif
 const char *DEFAULT_REPO;
-void check_title_id() {
+check_title_id() {
     /*...*/
     uint64_t title_id = OSGetTitleID();
     if (title_id == 0x000500101004A200){
@@ -24,7 +24,6 @@ void check_title_id() {
         DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/USA";
     }
 }
-int check_title_id();
 int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
