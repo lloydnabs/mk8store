@@ -15,7 +15,7 @@
 #define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
 #define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 #endif
-eu= False
+eu = False
 void title_check(){
 uint64_t title_id = OSGetTitleID();
 if (title_id == 0x000500101004A200){
@@ -42,13 +42,17 @@ return;
 #if defined(__WIIU__) 
 	init_networking();
 	// create main get object
-    if eu == True
+	Get* get = new Get("./.get/", US_REPO);
+	void regionrepo()
+	{
+	if eu == True
 	{
 		Get* get = new Get("./.get/", EU_REPO);
 	}
 	else
 	{
 		Get* get = new Get("./.get/", US_REPO);
+	}
 	}
 #endif
 #if defined(NOGUI)
