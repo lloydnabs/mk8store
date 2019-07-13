@@ -14,7 +14,7 @@
 #include "gui/MainDisplay.hpp"
 #define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
 #define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
-#define DEFAULT_REPO
+#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU"
 #endif
 void title_check(){
 uint64_t title_id = OSGetTitleID();
