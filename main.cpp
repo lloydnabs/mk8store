@@ -1,8 +1,7 @@
 #if defined(SWITCH)
 #include <switch.h>
 #endif
-#include "dynamic_libs/os_functions.h"
-#include "dynamic_libs/sys_functions.h"
+#include <coreinit/title.h>
 #if defined(__WIIU__)
 #include <unistd.h>
 #endif
@@ -16,7 +15,7 @@
 #endif
 const char *DEFAULT_REPO;
 void check_title_id() {
-    uint64_t title_id = *(uint64_t*)0x10013C10;
+    uint64_t title_id = OSGetTitleID();
     if (title_id == 0x000500101004A200){
         DEFAULT_REPO = (const char*)"http://host.ctgpu.tk/CTGPU/PAL";
     }
