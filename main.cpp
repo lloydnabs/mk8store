@@ -27,6 +27,7 @@ else {
 }
 int main(int argc, char* argv[])
 {
+title_check();
 #if defined(__WIIU__)
 #define HBAS_PATH ROOT_PATH "wiiu/apps/mk8store"
 #define ELF_PATH HBAS_PATH "/hbas.elf"
