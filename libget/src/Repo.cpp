@@ -23,13 +23,17 @@ Repo::Repo(const char* name, const char* url)
 		this->url = (const char*) "http://host.ctgpu.tk/CTGPU/PAL";
 		this->enabled = true;
 	}
-	else{
+	else if (title_id == 0x000500101004A100){
 		this->name = name;
 		this->url = (const char*) "http://host.ctgpu.tk/CTGPU/USA";
 		this->enabled = true;
 	}
+	else{
+		this->name = name;
+		this->url = (const char*) "http://host.ctgpu.tk/CTGPU";
+		this->enabled = true;
+	}
 }
-
 std::string Repo::toJson()
 {
 	std::stringstream resp;
