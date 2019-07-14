@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sys/stat.h>
 #include <sys/types.h>
-
+#include <coreinit/titles.h>
 #include "rapidjson/document.h"
 #include "rapidjson/istreamwrapper.h"
 #include "rapidjson/stringbuffer.h"
@@ -17,7 +17,13 @@ using namespace rapidjson;
 
 Get::Get(const char* config_dir, const char* defaultRepo)
 {
-	this->defaultRepo = defaultRepo;
+	uint64_t title_id = OSGetTitleID();
+	if (title_id == 0x000500101004A200){
+		this->defaultRepo = (const char*) "http://host.ctgpu.tk/CTGPU/PAL";
+	}
+	else{
+		this->defaultRepo = (const char*) "http://host.ctgpu.tk/CTGPU/USA";
+	}
 
 	// the path for the get metadata folder
 	string config_path = config_dir;
