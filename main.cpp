@@ -12,19 +12,8 @@
 #include "console/Menu.hpp"
 #else
 #include "gui/MainDisplay.hpp"
-#define US_REPO "http://host.ctgpu.tk/CTGPU/USA"
-#define EU_REPO "http://host.ctgpu.tk/CTGPU/PAL"
 #define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU"
 #endif
-void title_check(){
-uint64_t title_id = OSGetTitleID();
-if (title_id == 0x000500101004A200){
-    std::rename(EU_REPO,DEFAULT_REPO);
-}
-else {
-	std::rename(US_REPO,DEFAULT_REPO);
-}
-}
 int main(int argc, char* argv[])
 {
 #if defined(__WIIU__)
