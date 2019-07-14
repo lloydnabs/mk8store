@@ -21,10 +21,12 @@ Get::Get(const char* config_dir, const char* defaultRepo)
 	if (title_id == 0x000500101004A200){
 		this->defaultRepo = (const char*) "http://host.ctgpu.tk/CTGPU/PAL";
 	}
-	else{
+	else if (title_id == 0x000500101004A100){
 		this->defaultRepo = (const char*) "http://host.ctgpu.tk/CTGPU/USA";
 	}
-
+	else{
+		this->defaultRepo = (const char*) "http://host.ctgpu.tk/CTGPU";
+	}
 	// the path for the get metadata folder
 	string config_path = config_dir;
 
