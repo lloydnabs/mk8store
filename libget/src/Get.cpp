@@ -3,7 +3,7 @@
 #include <iostream>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include <coreinit/titles.h>
+#include <coreinit/title.h>
 #include "rapidjson/document.h"
 #include "rapidjson/istreamwrapper.h"
 #include "rapidjson/stringbuffer.h"
