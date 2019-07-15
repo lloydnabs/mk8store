@@ -12,7 +12,7 @@
 #include "console/Menu.hpp"
 #else
 #include "gui/MainDisplay.hpp"
-#define DEFAULT_REPO "http://host.ctgpu.tk/CTGPU"
+#define DEFAULT_REPO "http://lloydnabs.gitlab.io/CTGPU"
 #endif
 int main(int argc, char* argv[])
 {
