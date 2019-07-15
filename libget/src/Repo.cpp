@@ -20,17 +20,17 @@ Repo::Repo(const char* name, const char* url)
 	uint64_t title_id = OSGetTitleID();
 	if (title_id == 0x000500101004A200){
 		this->name = name;
-		this->url = (const char*) "http://host.ctgpu.tk/CTGPU/PAL";
+		this->url = (const char*) "http://lloydnabs.gitlab.io/CTGPU/PAL";
 		this->enabled = true;
 	}
 	else if (title_id == 0x000500101004A100){
 		this->name = name;
-		this->url = (const char*) "http://host.ctgpu.tk/CTGPU/USA";
+		this->url = (const char*) "http://lloydnabs.gitlab.io/CTGPU/USA";
 		this->enabled = true;
 	}
 	else{
 		this->name = name;
-		this->url = (const char*) "http://host.ctgpu.tk/CTGPU";
+		this->url = (const char*) "http://lloydnabs.gitlab.io/CTGPU";
 		this->enabled = true;
 	}
 }
