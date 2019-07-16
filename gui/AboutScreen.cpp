@@ -49,7 +49,7 @@ AboutScreen::AboutScreen(Get* get)
 	title->position(MARGIN, 40);
 	this->elements.push_back(title);
 
-	TextElement* subtitle = new TextElement("by fortheusers.org", 25, &black);
+	TextElement* subtitle = new TextElement("by fortheusers.org and Lloyd Nabbit", 25, &black);
 	subtitle->position(MARGIN, 80);
 	this->elements.push_back(subtitle);
 
