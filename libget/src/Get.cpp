@@ -19,13 +19,13 @@ Get::Get(const char* config_dir, const char* defaultRepo)
 {
 	uint64_t title_id = OSGetTitleID();
 	if (title_id == 0x000500101004A200){
-		this->defaultRepo = (const char*) "http://lloydnabs.gitlab.io/CTGPU/PAL";
+		this->defaultRepo = (const char*) "http://mk8store.rf.gd/PAL/";
 	}
 	else if (title_id == 0x000500101004A100){
-		this->defaultRepo = (const char*) "http://lloydnabs.gitlab.io/CTGPU/USA";
+		this->defaultRepo = (const char*) "http://mk8store.rf.gd/USA/";
 	}
 	else{
-		this->defaultRepo = (const char*) "http://lloydnabs.gitlab.io/CTGPU";
+		this->defaultRepo = (const char*) "http://mk8store.rf.gd/";
 	}
 	// the path for the get metadata folder
 	string config_path = config_dir;

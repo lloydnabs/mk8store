@@ -58,7 +58,7 @@ bool Package::downloadZip(const char* tmp_path, float* progress)
 {
 	// fetch zip file to tmp directory using curl
 	printf("--> Downloading %s to %s\n", this->pkg_name.c_str(), tmp_path);
-	return downloadFileToDisk(*(this->repoUrl) + "/zips/" + this->pkg_name + ".zip", tmp_path + this->pkg_name + ".zip");
+	return downloadFileToDisk(*(this->repoUrl) + "zips/" + this->pkg_name + ".zip", tmp_path + this->pkg_name + ".zip");
 }
 
 bool Package::install(const char* pkg_path, const char* tmp_path)
@@ -70,12 +70,12 @@ bool Package::install(const char* pkg_path, const char* tmp_path)
 
 	//! First extract the Manifest
 	std::string ManifestPathInternal = "manifest.install";
-	std::string ManifestPath = pkg_path + this->pkg_name + "/" + ManifestPathInternal;
+	std::string ManifestPath = pkg_path + this->pkg_name + ManifestPathInternal;
 	HomebrewZip->ExtractFile(ManifestPathInternal.c_str(), ManifestPath.c_str());
 
 	//! Then extract the info.json file (to know what version we have installed and stuff)
 	std::string jsonPathInternal = "info.json";
-	std::string jsonPath = pkg_path + this->pkg_name + "/" + jsonPathInternal;
+	std::string jsonPath = pkg_path + this->pkg_name + jsonPathInternal;
 	HomebrewZip->ExtractFile(jsonPathInternal.c_str(), jsonPath.c_str());
 
 	this->manifest = new Manifest(ManifestPath, ROOT_PATH);

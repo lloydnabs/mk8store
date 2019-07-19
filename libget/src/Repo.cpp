@@ -20,17 +20,17 @@ Repo::Repo(const char* name, const char* url)
 	uint64_t title_id = OSGetTitleID();
 	if (title_id == 0x000500101004A200){
 		this->name = name;
-		this->url = (const char*) "http://lloydnabs.gitlab.io/CTGPU/PAL";
+		this->url = (const char*) "http://mk8store.rf.gd/PAL/";
 		this->enabled = true;
 	}
 	else if (title_id == 0x000500101004A100){
 		this->name = name;
-		this->url = (const char*) "http://lloydnabs.gitlab.io/CTGPU/USA";
+		this->url = (const char*) "http://mk8store.rf.gd/USA/";
 		this->enabled = true;
 	}
 	else{
 		this->name = name;
-		this->url = (const char*) "http://lloydnabs.gitlab.io/CTGPU";
+		this->url = (const char*) "http://mk8store.rf.gd";
 		this->enabled = true;
 	}
 }
@@ -66,7 +66,7 @@ std::string Repo::toString()
 
 void Repo::loadPackages(std::vector<Package*>* packages)
 {
-	std::string directoryUrl = this->url + "/repo.json";
+	std::string directoryUrl = this->url + "repo.json";
 
 	// fetch current repository json
 	std::string response;
@@ -79,7 +79,7 @@ void Repo::loadPackages(std::vector<Package*>* packages)
 
 		// update repo url
 		this->url.replace(0, 5, "http");
-		directoryUrl = this->url + "/repo.json";
+		directoryUrl = this->url + "repo.json";
 
 		// retry fetch
 		success = downloadFileToMemory(directoryUrl, &response);
